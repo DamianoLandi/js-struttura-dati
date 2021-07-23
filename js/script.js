@@ -182,6 +182,16 @@ search.addEventListener("click",() => {
                 } 
                 break;   
         };
+        switch (selectInput.value){
+            case "primoTipo":
+            case "archetipo":
+                for (let k = 0; k < cardList.length;k++) {
+                    if (cardList[k]["tipo"][selectInput.value].includes(textInput.value)){
+                        filteredMessage += cardFunction(cardList[k]);
+                    }
+                } 
+                break;   
+        };
 
 
 
