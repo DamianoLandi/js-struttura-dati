@@ -153,11 +153,24 @@ search.addEventListener("click",() => {
             case "costo":
             case "testoColore":
             case "illustratore":
+            case "bordo":
                 for (let k = 0; k < cardList.length;k++) {
                     if (cardList[k][selectInput.value].includes(textInput.value)){
                         filteredMessage += cardFunction(cardList[k]);
                     }
                 }
+                break;
+        };
+        switch (selectInput.value){
+            case "costoConvertito":
+            case "espansione":
+            case "forza":
+            case "costituzione":
+                for (let k = 0; k < cardList.length;k++) {
+                    if (cardList[k][selectInput.value] == textInput.value){
+                        filteredMessage += cardFunction(cardList[k]);
+                    }
+                }      
         }
 
 
