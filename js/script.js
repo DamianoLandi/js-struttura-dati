@@ -114,8 +114,8 @@ const cardList = [
                 effetto: "Aumenta di 2 punti la forza di questa carta per 3 turni",
             },
         ],
-        testoColore: "Un antico soldato che, dopo secoli, continua a seguire gli ordini del suo padrone...",
-        illustratore: "John Smith",
+        testoColore: "Una statua di ghiaccio mossa da un potere ignoto",
+        illustratore: "Houshou Marine",
         idCarta: {
             numero: 31,
             totale: 395,
@@ -133,4 +133,38 @@ let message = ""
 for (let h = 0; h < cardList.length;h++){
     message += cardFunction(cardList[h]);
 }
- cardDisplay.innerHTML = message;
+cardDisplay.innerHTML = message;
+
+
+
+const search = document.getElementById("search");
+
+const textInput = document.getElementById("type");
+
+const selectInput = document.getElementById("select");
+
+search.addEventListener("click",() => {
+    if (selectInput.value === "all"){
+        cardDisplay.innerHTML = message;
+    }else{
+        let filteredMessage ="";
+        switch (selectInput.value){
+            case "nome":
+            case "costo":
+            case "testoColore":
+            case "illustratore":
+                for (let k = 0; k < cardList.length;k++) {
+                    if (cardList[k][selectInput.value].includes(textInput.value)){
+                        filteredMessage += cardFunction(cardList[k]);
+                    }
+                }
+        }
+
+
+
+
+
+
+        cardDisplay.innerHTML = filteredMessage;
+    }
+})
