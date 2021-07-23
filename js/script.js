@@ -170,8 +170,18 @@ search.addEventListener("click",() => {
                     if (cardList[k][selectInput.value] == textInput.value){
                         filteredMessage += cardFunction(cardList[k]);
                     }
-                }      
-        }
+                } 
+                break;     
+        };
+        switch (selectInput.value){
+            case "idCarta":
+                for (let k = 0; k < cardList.length;k++) {
+                    if (cardList[k][selectInput.value].numero == textInput.value){
+                        filteredMessage += cardFunction(cardList[k]);
+                    }
+                } 
+                break;   
+        };
 
 
 
